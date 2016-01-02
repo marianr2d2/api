@@ -1,15 +1,19 @@
 <?php
 
     //http://docs.slimframework.com/routing/helpers/
-
+    
     require 'Slim/Slim.php';
     \Slim\Slim::registerAutoloader();
     require 'config.php';
+    
     
     // Set the current mode
     $app = new \Slim\Slim($config);
 
     $db = Lib\Db\Wrapper\MySql::getInstance();
+    //var_dump($db->test());
+    var_dump($db->fetchAll("SELECT * from test"));
+    var_dump($db->fetchOne("SELECT val FROM test where id = ?", array(2)));
     
 
     // Only invoked if mode is "development"

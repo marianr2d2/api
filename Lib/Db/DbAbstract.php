@@ -15,7 +15,7 @@ abstract class DbAbstract extends \Lib\Db\DbSingleton implements \Lib\Db\DbInter
         if (array_key_exists(strtolower($class), $config)) {
             $this->config = $config[strtolower($class)];
         } else {
-            throw new \Slim\Exception\Stop('Could not find configuration values for ' . $class);
+            throw new \Exception('Could not find configuration values for ' . $class);
         }
     }
     

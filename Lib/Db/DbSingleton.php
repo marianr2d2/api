@@ -8,7 +8,7 @@ class DbSingleton {
     protected function __clone() {}
     public function __wakeup()
     {
-        throw new \Slim\Exception\Stop("Cannot unserialize singleton");
+        throw new \Exception("Cannot unserialize singleton");
     }
     
     
