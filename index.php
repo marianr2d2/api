@@ -15,7 +15,7 @@
     //var_dump($db->test());
     var_dump($db->fetchAll("SELECT * from test"));
     var_dump($db->fetchOne("SELECT val FROM test where id = ?", array(1)));
-    
+    $res = $db->query("INSERT INTO test (val) VALUES(?)", array(uniqid()));
 
     // Only invoked if mode is "development"
     $app->configureMode('development', function () use ($app) {
