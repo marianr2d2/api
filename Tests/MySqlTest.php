@@ -16,15 +16,15 @@ class MySqlTest extends PHPUnit_Framework_TestCase
     
     
     public function testCanInsert() {
-        $result = $this->db->query("INSERT INTO test (val) VALUES(?)", array($this->dummyVal));
+        $result = $this->db->query("INSERT INTO test (val) VALUES(?)", [$this->dummyVal]);
         $this->assertTrue($result);
     }
     
     
     public function testCanFetchOne() {
         $this->dummyVal = uniqid();
-        $this->db->query("INSERT INTO test (val) VALUES(?)", array($this->dummyVal));
-        $val = $this->db->fetchOne("SELECT val FROM test WHERE val LIKE ?", array($this->dummyVal));
+        $this->db->query("INSERT INTO test (val) VALUES(?)", [$this->dummyVal]);
+        $val = $this->db->fetchOne("SELECT val FROM test WHERE val LIKE ?", [$this->dummyVal]);
         $this->assertEquals($this->dummyVal, $val);
     }
     

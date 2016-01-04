@@ -14,7 +14,7 @@ class PdoEngine implements \Lib\Db\DbInterface {
         if (defined('\PDO::ATTR_DRIVER_NAME')) {
             $emulate_prepares_below_version = '5.1.17';
 
-            $dsndefaults = array_fill_keys(array('host', 'port', 'unix_socket', 'dbname', 'charset'), null);
+            $dsndefaults = array_fill_keys(['host', 'port', 'unix_socket', 'dbname', 'charset'], null);
             $dsnarr = array_intersect_key($settings, $dsndefaults);
             $dsnarr += $dsndefaults;
 
