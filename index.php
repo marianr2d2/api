@@ -5,7 +5,7 @@
     ini_set('display_errors', 1);
     require 'Slim/Slim.php';
     \Slim\Slim::registerAutoloader();
-    require 'config.php';
+    require dirname(__FILE__) . DIRECTORY_SEPARATOR . 'config.php';
     
     
     // Set the current mode
@@ -14,7 +14,7 @@
     $db = Lib\Db\Wrapper\MySql::getInstance();
     //var_dump($db->test());
     var_dump($db->fetchAll("SELECT * from test"));
-    var_dump($db->fetchOne("SELECT val FROM test where id = ?", array(2)));
+    var_dump($db->fetchOne("SELECT val FROM test where id = ?", array(1)));
     
 
     // Only invoked if mode is "development"

@@ -10,6 +10,7 @@ abstract class DbAbstract extends \Lib\Db\DbSingleton implements \Lib\Db\DbInter
         $class = get_called_class();
         $classParts = preg_split("#\\\#", $class);
         $class = array_pop($classParts);
+        
         global $config;
         
         if (array_key_exists(strtolower($class), $config)) {

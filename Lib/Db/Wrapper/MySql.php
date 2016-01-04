@@ -8,7 +8,7 @@ class MySql extends \Lib\Db\DbAbstract {
     public function __construct() {
         try {
             $this->loadConf();
-        } catch (\Slim\Exception\Stop $e) {
+        } catch (\Exception $e) {
             echo $e->getMessage();
         }
         
