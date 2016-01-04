@@ -1,7 +1,8 @@
 <?php
 
     //http://docs.slimframework.com/routing/helpers/
-    
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
     require 'Slim/Slim.php';
     \Slim\Slim::registerAutoloader();
     require 'config.php';

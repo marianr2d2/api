@@ -24,4 +24,26 @@ abstract class DbAbstract extends \Lib\Db\DbSingleton implements \Lib\Db\DbInter
         $this->dbh = $dbh;
     }
     
+    public function query($query, $params = array()) {
+        return $this->dbh->query($query, $params);
+    }
+    
+    public function fetchAll($query, $params = array()) {
+        return $this->dbh->fetchAll($query, $params);
+    }
+    
+    public function fetchRow($query, $params = array()) {
+        return $this->dbh->fetchRow($query, $params);
+    }
+    
+    public function fetchOne($query, $params = array()) {
+        return $this->dbh->fetchOne($query, $params);
+    }
+
+    public function lastId() {
+        return $this->dbh->lastId();
+    }
+    
+    
+    
 }
